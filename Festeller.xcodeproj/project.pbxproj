@@ -3,12 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9913EEB234CF5E2389A6F405 /* Pods_FestellerAdm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8181FA7A2A4F9D008DA320DF /* Pods_FestellerAdm.framework */; };
 		BECFB291C3A2984327E036E8 /* Pods_Festeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D6BA418065BA02C9992766 /* Pods_Festeller.framework */; };
+		E81E7BE02308A3CF00D7EE0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E81E7BDF2308A3CF00D7EE0C /* GoogleService-Info.plist */; };
+		E81E7BE22308A4BF00D7EE0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E81E7BE12308A4BF00D7EE0C /* GoogleService-Info.plist */; };
+		E81E7BEA2308B58100D7EE0C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81E7BE92308B58100D7EE0C /* LoginVC.swift */; };
+		E81E7BEC2308B59C00D7EE0C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81E7BEB2308B59C00D7EE0C /* RegisterVC.swift */; };
 		E8224767230884AF009FB3E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8224766230884AF009FB3E2 /* AppDelegate.swift */; };
 		E8224769230884AF009FB3E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8224768230884AF009FB3E2 /* ViewController.swift */; };
 		E822476C230884AF009FB3E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E822476A230884AF009FB3E2 /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 		8181FA7A2A4F9D008DA320DF /* Pods_FestellerAdm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FestellerAdm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8066AA155910D2A8D3CC046 /* Pods-Festeller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festeller.debug.xcconfig"; path = "Target Support Files/Pods-Festeller/Pods-Festeller.debug.xcconfig"; sourceTree = "<group>"; };
 		C7D6BA418065BA02C9992766 /* Pods_Festeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festeller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81E7BDF2308A3CF00D7EE0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E81E7BE12308A4BF00D7EE0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E81E7BE92308B58100D7EE0C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E81E7BEB2308B59C00D7EE0C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E8224763230884AF009FB3E2 /* Festeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Festeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8224766230884AF009FB3E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8224768230884AF009FB3E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +81,6 @@
 				F20F9B55B64A60C414B20FB1 /* Pods-FestellerAdm.debug.xcconfig */,
 				2ECA7332B1BAA5C5428DF00F /* Pods-FestellerAdm.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +91,41 @@
 				8181FA7A2A4F9D008DA320DF /* Pods_FestellerAdm.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E81E7BE32308B45D00D7EE0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E81E7BE92308B58100D7EE0C /* LoginVC.swift */,
+				E81E7BEB2308B59C00D7EE0C /* RegisterVC.swift */,
+				E8224768230884AF009FB3E2 /* ViewController.swift */,
+				E8224766230884AF009FB3E2 /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E81E7BE42308B46100D7EE0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E81E7BE52308B46400D7EE0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E81E7BE82308B49700D7EE0C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E8224790230887A6009FB3E2 /* LoginStoryboard.storyboard */,
+				E822476A230884AF009FB3E2 /* Main.storyboard */,
+				E822476F230884B0009FB3E2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E822475A230884AF009FB3E2 = {
@@ -110,11 +152,11 @@
 		E8224765230884AF009FB3E2 /* Festeller */ = {
 			isa = PBXGroup;
 			children = (
-				E8224766230884AF009FB3E2 /* AppDelegate.swift */,
-				E8224768230884AF009FB3E2 /* ViewController.swift */,
-				E8224790230887A6009FB3E2 /* LoginStoryboard.storyboard */,
-				E822476A230884AF009FB3E2 /* Main.storyboard */,
-				E822476F230884B0009FB3E2 /* LaunchScreen.storyboard */,
+				E81E7BE52308B46400D7EE0C /* Model */,
+				E81E7BE42308B46100D7EE0C /* View */,
+				E81E7BE32308B45D00D7EE0C /* Controller */,
+				E81E7BE82308B49700D7EE0C /* Storyboards */,
+				E81E7BDF2308A3CF00D7EE0C /* GoogleService-Info.plist */,
 				E8224772230884B0009FB3E2 /* Info.plist */,
 			);
 			path = Festeller;
@@ -127,6 +169,7 @@
 				E8224780230884EC009FB3E2 /* ViewController.swift */,
 				E8224782230884EC009FB3E2 /* Main.storyboard */,
 				E8224787230884ED009FB3E2 /* LaunchScreen.storyboard */,
+				E81E7BE12308A4BF00D7EE0C /* GoogleService-Info.plist */,
 				E822478A230884ED009FB3E2 /* Info.plist */,
 			);
 			path = FestellerAdm;
@@ -223,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81E7BE02308A3CF00D7EE0C /* GoogleService-Info.plist in Resources */,
 				E8224771230884B0009FB3E2 /* LaunchScreen.storyboard in Resources */,
 				E822476E230884B0009FB3E2 /* Assets.xcassets in Resources */,
 				E822476C230884AF009FB3E2 /* Main.storyboard in Resources */,
@@ -237,6 +281,7 @@
 				E8224789230884ED009FB3E2 /* LaunchScreen.storyboard in Resources */,
 				E822478F23088576009FB3E2 /* Assets.xcassets in Resources */,
 				E8224784230884EC009FB3E2 /* Main.storyboard in Resources */,
+				E81E7BE22308A4BF00D7EE0C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8224769230884AF009FB3E2 /* ViewController.swift in Sources */,
+				E81E7BEC2308B59C00D7EE0C /* RegisterVC.swift in Sources */,
 				E8224767230884AF009FB3E2 /* AppDelegate.swift in Sources */,
+				E81E7BEA2308B58100D7EE0C /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
