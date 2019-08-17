@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9913EEB234CF5E2389A6F405 /* Pods_FestellerAdm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8181FA7A2A4F9D008DA320DF /* Pods_FestellerAdm.framework */; };
+		BECFB291C3A2984327E036E8 /* Pods_Festeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7D6BA418065BA02C9992766 /* Pods_Festeller.framework */; };
 		E8224767230884AF009FB3E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8224766230884AF009FB3E2 /* AppDelegate.swift */; };
 		E8224769230884AF009FB3E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8224768230884AF009FB3E2 /* ViewController.swift */; };
 		E822476C230884AF009FB3E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E822476A230884AF009FB3E2 /* Main.storyboard */; };
@@ -21,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1824E06401D8A5F8E63C6954 /* Pods-Festeller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festeller.release.xcconfig"; path = "Target Support Files/Pods-Festeller/Pods-Festeller.release.xcconfig"; sourceTree = "<group>"; };
+		2ECA7332B1BAA5C5428DF00F /* Pods-FestellerAdm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FestellerAdm.release.xcconfig"; path = "Target Support Files/Pods-FestellerAdm/Pods-FestellerAdm.release.xcconfig"; sourceTree = "<group>"; };
+		8181FA7A2A4F9D008DA320DF /* Pods_FestellerAdm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FestellerAdm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8066AA155910D2A8D3CC046 /* Pods-Festeller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Festeller.debug.xcconfig"; path = "Target Support Files/Pods-Festeller/Pods-Festeller.debug.xcconfig"; sourceTree = "<group>"; };
+		C7D6BA418065BA02C9992766 /* Pods_Festeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Festeller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8224763230884AF009FB3E2 /* Festeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Festeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8224766230884AF009FB3E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8224768230884AF009FB3E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +42,7 @@
 		E8224788230884ED009FB3E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E822478A230884ED009FB3E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8224790230887A6009FB3E2 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		F20F9B55B64A60C414B20FB1 /* Pods-FestellerAdm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FestellerAdm.debug.xcconfig"; path = "Target Support Files/Pods-FestellerAdm/Pods-FestellerAdm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECFB291C3A2984327E036E8 /* Pods_Festeller.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,12 +58,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9913EEB234CF5E2389A6F405 /* Pods_FestellerAdm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12B1EE57B2813891A19155CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8066AA155910D2A8D3CC046 /* Pods-Festeller.debug.xcconfig */,
+				1824E06401D8A5F8E63C6954 /* Pods-Festeller.release.xcconfig */,
+				F20F9B55B64A60C414B20FB1 /* Pods-FestellerAdm.debug.xcconfig */,
+				2ECA7332B1BAA5C5428DF00F /* Pods-FestellerAdm.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A7EB145ED829ABAD4E484F36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7D6BA418065BA02C9992766 /* Pods_Festeller.framework */,
+				8181FA7A2A4F9D008DA320DF /* Pods_FestellerAdm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E822475A230884AF009FB3E2 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +93,8 @@
 				E8224765230884AF009FB3E2 /* Festeller */,
 				E822477D230884EC009FB3E2 /* FestellerAdm */,
 				E8224764230884AF009FB3E2 /* Products */,
+				12B1EE57B2813891A19155CB /* Pods */,
+				A7EB145ED829ABAD4E484F36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8224775230884B0009FB3E2 /* Build configuration list for PBXNativeTarget "Festeller" */;
 			buildPhases = (
+				E4A4C171ADEF0B4ACC9E7040 /* [CP] Check Pods Manifest.lock */,
 				E822475F230884AF009FB3E2 /* Sources */,
 				E8224760230884AF009FB3E2 /* Frameworks */,
 				E8224761230884AF009FB3E2 /* Resources */,
+				2473869FC08ADA152E3A8909 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E822478B230884ED009FB3E2 /* Build configuration list for PBXNativeTarget "FestellerAdm" */;
 			buildPhases = (
+				47B709DB8B97F630A83B7ACD /* [CP] Check Pods Manifest.lock */,
 				E8224778230884EC009FB3E2 /* Sources */,
 				E8224779230884EC009FB3E2 /* Frameworks */,
 				E822477A230884EC009FB3E2 /* Resources */,
+				3BDA2D152EAA2D590AA97B09 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +241,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2473869FC08ADA152E3A8909 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Festeller/Pods-Festeller-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Festeller/Pods-Festeller-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Festeller/Pods-Festeller-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BDA2D152EAA2D590AA97B09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FestellerAdm/Pods-FestellerAdm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FestellerAdm/Pods-FestellerAdm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FestellerAdm/Pods-FestellerAdm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47B709DB8B97F630A83B7ACD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FestellerAdm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A4C171ADEF0B4ACC9E7040 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Festeller-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E822475F230884AF009FB3E2 /* Sources */ = {
@@ -380,6 +498,7 @@
 		};
 		E8224776230884B0009FB3E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8066AA155910D2A8D3CC046 /* Pods-Festeller.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -399,6 +518,7 @@
 		};
 		E8224777230884B0009FB3E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1824E06401D8A5F8E63C6954 /* Pods-Festeller.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,6 +538,7 @@
 		};
 		E822478C230884ED009FB3E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F20F9B55B64A60C414B20FB1 /* Pods-FestellerAdm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -437,6 +558,7 @@
 		};
 		E822478D230884ED009FB3E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECA7332B1BAA5C5428DF00F /* Pods-FestellerAdm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
