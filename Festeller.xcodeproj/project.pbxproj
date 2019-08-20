@@ -24,6 +24,10 @@
 		E8224789230884ED009FB3E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8224787230884ED009FB3E2 /* LaunchScreen.storyboard */; };
 		E822478F23088576009FB3E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E822476D230884B0009FB3E2 /* Assets.xcassets */; };
 		E8224791230887A6009FB3E2 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8224790230887A6009FB3E2 /* LoginStoryboard.storyboard */; };
+		E870A0DC230B1B58003F1365 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870A0DB230B1B58003F1365 /* Constants.swift */; };
+		E8E3DC9F2309DA9D001463AF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3DC9E2309DA9D001463AF /* Extensions.swift */; };
+		E8E3DCA02309DA9D001463AF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3DC9E2309DA9D001463AF /* Extensions.swift */; };
+		E8FF40E8230C28E600166F87 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF40E7230C28E600166F87 /* RoundedViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,9 @@
 		E8224788230884ED009FB3E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E822478A230884ED009FB3E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8224790230887A6009FB3E2 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		E870A0DB230B1B58003F1365 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E8E3DC9E2309DA9D001463AF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E8FF40E7230C28E600166F87 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		F20F9B55B64A60C414B20FB1 /* Pods-FestellerAdm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FestellerAdm.debug.xcconfig"; path = "Target Support Files/Pods-FestellerAdm/Pods-FestellerAdm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,9 +185,28 @@
 		E822478E23088529009FB3E2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E8FF40E6230C28C400166F87 /* CustomView */,
+				E8E3DC9D2309DA7B001463AF /* Utilities */,
 				E822476D230884B0009FB3E2 /* Assets.xcassets */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		E8E3DC9D2309DA7B001463AF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E8E3DC9E2309DA9D001463AF /* Extensions.swift */,
+				E870A0DB230B1B58003F1365 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E8FF40E6230C28C400166F87 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E8FF40E7230C28E600166F87 /* RoundedViews.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,10 +399,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E3DC9F2309DA9D001463AF /* Extensions.swift in Sources */,
 				E8224769230884AF009FB3E2 /* ViewController.swift in Sources */,
 				E81E7BEC2308B59C00D7EE0C /* RegisterVC.swift in Sources */,
 				E8224767230884AF009FB3E2 /* AppDelegate.swift in Sources */,
+				E8FF40E8230C28E600166F87 /* RoundedViews.swift in Sources */,
 				E81E7BEA2308B58100D7EE0C /* LoginVC.swift in Sources */,
+				E870A0DC230B1B58003F1365 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8224781230884EC009FB3E2 /* ViewController.swift in Sources */,
+				E8E3DCA02309DA9D001463AF /* Extensions.swift in Sources */,
 				E822477F230884EC009FB3E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

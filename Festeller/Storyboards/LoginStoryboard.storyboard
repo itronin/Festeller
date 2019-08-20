@@ -55,7 +55,7 @@
                                             <color key="titleColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzB-Mx-Kyl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzB-Mx-Kyl" customClass="RoundedButton" customModule="Festeller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="189" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.22745098039215686" green="0.26666666666666666" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -66,7 +66,7 @@
                                             <color key="titleColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adc-0Y-S6X">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adc-0Y-S6X" customClass="RoundedButton" customModule="Festeller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="241" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -80,7 +80,7 @@
                                             <segue destination="GFS-vu-NL4" kind="show" id="ZF5-EH-O0i"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-Ix-gcF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-Ix-gcF" customClass="RoundedButton" customModule="Festeller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="293" width="374" height="40"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -176,7 +176,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3U-6j-MYm">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3U-6j-MYm" customClass="RoundedButton" customModule="Festeller" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="246" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -231,8 +231,10 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="erH-oM-l3P" id="gl5-lK-bS9"/>
+                        <outlet property="confirmPassCheckImg" destination="ggC-tM-Muu" id="Bim-EK-Vl7"/>
                         <outlet property="confirmPasswordTxt" destination="A2r-W9-Wtw" id="THM-5N-rEZ"/>
                         <outlet property="emailTxt" destination="2UZ-97-keV" id="EVS-ks-CYi"/>
+                        <outlet property="passCheckImg" destination="gr0-Yn-VV2" id="CrA-Lv-Z8n"/>
                         <outlet property="passwordTxt" destination="YQa-gl-vn0" id="gF9-SR-Edd"/>
                         <outlet property="usernameTxt" destination="xmJ-JM-l2s" id="Dcd-bW-ebn"/>
                     </connections>
