@@ -21,6 +21,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func forgotPasswordPressed(_ sender: Any) {
+        showForgotPWDVC()
     }
     
     @IBAction func loginPressed(_ sender: Any) {
@@ -36,7 +37,7 @@ class LoginVC: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error  {
                 debugPrint(error)
-                self.handeleFireAuthError(error: error)
+                self.handleFireAuthError(error: error)
                 self.activityIndicator.stopAnimating()
                 return
             }

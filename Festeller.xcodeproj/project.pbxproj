@@ -13,6 +13,8 @@
 		E81E7BE22308A4BF00D7EE0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E81E7BE12308A4BF00D7EE0C /* GoogleService-Info.plist */; };
 		E81E7BEA2308B58100D7EE0C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81E7BE92308B58100D7EE0C /* LoginVC.swift */; };
 		E81E7BEC2308B59C00D7EE0C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81E7BEB2308B59C00D7EE0C /* RegisterVC.swift */; };
+		E8213771230EA9AF001E4E5C /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821376F230EA9AF001E4E5C /* ForgotPasswordVC.swift */; };
+		E8213772230EA9AF001E4E5C /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8213770230EA9AF001E4E5C /* ForgotPasswordVC.xib */; };
 		E8224767230884AF009FB3E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8224766230884AF009FB3E2 /* AppDelegate.swift */; };
 		E8224769230884AF009FB3E2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8224768230884AF009FB3E2 /* HomeVC.swift */; };
 		E822476C230884AF009FB3E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E822476A230884AF009FB3E2 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		E81E7BE12308A4BF00D7EE0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E81E7BE92308B58100D7EE0C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E81E7BEB2308B59C00D7EE0C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		E821376F230EA9AF001E4E5C /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		E8213770230EA9AF001E4E5C /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		E8224763230884AF009FB3E2 /* Festeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Festeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8224766230884AF009FB3E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8224768230884AF009FB3E2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -135,6 +139,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		E821376E230EA96E001E4E5C /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				E821376F230EA9AF001E4E5C /* ForgotPasswordVC.swift */,
+				E8213770230EA9AF001E4E5C /* ForgotPasswordVC.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
 		E822475A230884AF009FB3E2 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 		E8224765230884AF009FB3E2 /* Festeller */ = {
 			isa = PBXGroup;
 			children = (
+				E821376E230EA96E001E4E5C /* XIBs */,
 				E81E7BE52308B46400D7EE0C /* Model */,
 				E81E7BE42308B46100D7EE0C /* View */,
 				E81E7BE32308B45D00D7EE0C /* Controller */,
@@ -296,6 +310,7 @@
 				E8224771230884B0009FB3E2 /* LaunchScreen.storyboard in Resources */,
 				E822476E230884B0009FB3E2 /* Assets.xcassets in Resources */,
 				E822476C230884AF009FB3E2 /* Main.storyboard in Resources */,
+				E8213772230EA9AF001E4E5C /* ForgotPasswordVC.xib in Resources */,
 				E8224791230887A6009FB3E2 /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +420,7 @@
 				E8224767230884AF009FB3E2 /* AppDelegate.swift in Sources */,
 				E8FF40E8230C28E600166F87 /* RoundedViews.swift in Sources */,
 				E81E7BEA2308B58100D7EE0C /* LoginVC.swift in Sources */,
+				E8213771230EA9AF001E4E5C /* ForgotPasswordVC.swift in Sources */,
 				E870A0DC230B1B58003F1365 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

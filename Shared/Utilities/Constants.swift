@@ -11,6 +11,7 @@ import UIKit
 struct Storyboard {
     static let LoginStoryboard = "LoginStoryboard"
     static let Main = "Main"
+    static let ForgotPWVC = "ForgotPasswordVC"
 }
 
 struct StoryboardID {

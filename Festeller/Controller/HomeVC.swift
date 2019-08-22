@@ -20,7 +20,7 @@ class HomeVC: UIViewController {
         if Auth.auth().currentUser == nil {
             Auth.auth().signInAnonymously { (result, error) in
                 if let error = error {
-                    self.handeleFireAuthError(error: error)
+                    self.handleFireAuthError(error: error)
                     debugPrint(error)
                 }
             }
@@ -56,13 +56,13 @@ class HomeVC: UIViewController {
             do { try Auth.auth().signOut()
                 Auth.auth().signInAnonymously { (result, error) in
                     if let error = error {
-                        self.handeleFireAuthError(error: error)
+                        self.handleFireAuthError(error: error)
                         debugPrint(error)
                     }
                 self.presentLoginVC()
                 }
             } catch {
-                self.handeleFireAuthError(error: error)
+                self.handleFireAuthError(error: error)
                 debugPrint(error)
             }
         }
