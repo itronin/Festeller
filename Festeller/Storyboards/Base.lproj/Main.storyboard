@@ -17,7 +17,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="acO-zZ-cZV">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l1B-K3-hxW">
+                                <rect key="frame" x="20" y="88" width="335" height="724"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CyF-b9-Kva">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ATU-D6-Ctx">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="acO-zZ-cZV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="70F-Qj-3na"/>
+                            <constraint firstItem="acO-zZ-cZV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Aok-Oo-rUo"/>
+                            <constraint firstItem="ATU-D6-Ctx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVk-Jb-YQh"/>
+                            <constraint firstAttribute="bottom" secondItem="acO-zZ-cZV" secondAttribute="bottom" id="L7W-tr-4uC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l1B-K3-hxW" secondAttribute="trailing" constant="20" id="dFJ-Vj-guM"/>
+                            <constraint firstItem="ATU-D6-Ctx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l9T-d8-KA3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="acO-zZ-cZV" secondAttribute="trailing" id="sJS-mX-6lJ"/>
+                            <constraint firstItem="l1B-K3-hxW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="skS-IG-2aU"/>
+                            <constraint firstAttribute="bottom" secondItem="l1B-K3-hxW" secondAttribute="bottom" id="wY9-PZ-gmY"/>
+                            <constraint firstItem="l1B-K3-hxW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zix-Is-UAY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="k8N-jT-zi8">
@@ -28,6 +60,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="ATU-D6-Ctx" id="exs-Fc-YWX"/>
+                        <outlet property="collectionView" destination="l1B-K3-hxW" id="2z4-Cc-qtR"/>
                         <outlet property="loginOutBtn" destination="Ykc-Gn-oKK" id="IJ9-m9-eTR"/>
                     </connections>
                 </viewController>
@@ -54,4 +88,7 @@
             <point key="canvasLocation" x="194" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_cat3" width="1500" height="1875"/>
+    </resources>
 </document>
