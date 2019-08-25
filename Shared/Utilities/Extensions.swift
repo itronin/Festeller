@@ -22,11 +22,4 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
-    func showForgotPWDVC() {
-        let forgotPasswordVC = ForgotPasswordVC()
-        forgotPasswordVC.modalTransitionStyle = .crossDissolve
-        forgotPasswordVC.modalPresentationStyle = .overCurrentContext
-        present(forgotPasswordVC, animated: true, completion: nil)
-    }
 }

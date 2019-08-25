@@ -19,14 +19,13 @@ class HomeVC: UIViewController {
     
     // Variables
     var categories = [Category]()
+    var selectedCategory: Category!
+    var db : Firestore!
+    var listener: ListenerRegistration!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let category = Category.init(name: "Nature", id: "jhvhgbhj", imgURL: "https://images.unsplash.com/photo-1566500304829-707d59cb22a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60", isActive: true, timeStamp: Timestamp())
-        
-        categories.append(category)
-        
+        db = Firestore.firestore()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
@@ -39,17 +38,21 @@ class HomeVC: UIViewController {
             }
         }
     }
-
+    
+    
     override func viewDidAppear(_ animated: Bool) {
-        
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             // We are logged in
        loginOutBtn.title = "Logout"
         } else {
             loginOutBtn.title = "Login"
         }
-        
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        listener.remove()
+    }
+    
     
     fileprivate func presentLoginVC() {
         let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
@@ -57,6 +60,7 @@ class HomeVC: UIViewController {
         present(controller, animated: true, completion: nil)
     }
 
+    
     @IBAction func loginOutPressed(_ sender: Any) {
         
         // We are always logged in or either anonymously logged in
@@ -82,6 +86,11 @@ class HomeVC: UIViewController {
     }
 }
 
+
+
+
+
+
 extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -98,8 +107,75 @@ extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate, UIColle
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
-        let cellWidth = (width - 50 ) / 2
+        let cellWidth = (width - 30 ) / 2
         let cellHeight = cellWidth * 1.5
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategory = categories[indexPath.item]
+        performSegue(withIdentifier: Segues.ToProducts, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.ToProducts {
+            if let destination = segue.destination as? ProductsVC {
+                destination.category = selectedCategory
+            }
+        }
+    }
+    
 }
+
+// MARK:
+
+// This is prior code, left for reference only
+
+
+//    func fetchDocument() {
+//        let docRef = db.collection("categories").document("9YxkdXkvCZxyRKtutOl3")
+//
+//        docRef.addSnapshotListener { (snap, error) in
+//            self.categories.removeAll()
+//            guard let data = snap?.data() else { return }
+//            let newCategory = Category.init(data: data)
+//            self.categories.append(newCategory)
+//            self.collectionView.reloadData()
+//        }
+//
+////        docRef.getDocument { (snap, error) in
+////            guard let data = snap?.data() else { return }
+////            let newCategory = Category.init(data: data)
+////            self.categories.append(newCategory)
+////            self.collectionView.reloadData()
+////        }
+//    }
+
+//    func fetchCollection() {
+//
+//        let collectionReference = db.collection("categories")
+//
+//        listener = collectionReference.addSnapshotListener { (snap, error) in
+//            guard let documents = snap?.documents else { return }
+//
+//            print ("number of changes is: \(snap?.documentChanges.count))")
+//
+//            self.categories.removeAll()
+//            for document in documents {
+//                let data = document.data()
+//                let newCategory = Category.init(data: data)
+//                self.categories.append(newCategory)
+//            }
+//            self.collectionView.reloadData()
+//        }
+//
+////        collectionReference.getDocuments { (snap, error) in
+////            guard let documents = snap?.documents else { return }
+////            for document in documents {
+////                let data = document.data()
+////                let newCategory = Category.init(data: data)
+////                self.categories.append(newCategory)
+////            }
+////            self.collectionView.reloadData()
+////        }
+//    }

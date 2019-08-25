@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l1B-K3-hxW">
-                                <rect key="frame" x="20" y="88" width="335" height="724"/>
+                                <rect key="frame" x="10" y="88" width="355" height="724"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CyF-b9-Kva">
                                     <size key="itemSize" width="50" height="50"/>
@@ -43,12 +43,12 @@
                             <constraint firstItem="acO-zZ-cZV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Aok-Oo-rUo"/>
                             <constraint firstItem="ATU-D6-Ctx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVk-Jb-YQh"/>
                             <constraint firstAttribute="bottom" secondItem="acO-zZ-cZV" secondAttribute="bottom" id="L7W-tr-4uC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l1B-K3-hxW" secondAttribute="trailing" constant="20" id="dFJ-Vj-guM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l1B-K3-hxW" secondAttribute="trailing" constant="10" id="dFJ-Vj-guM"/>
                             <constraint firstItem="ATU-D6-Ctx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l9T-d8-KA3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="acO-zZ-cZV" secondAttribute="trailing" id="sJS-mX-6lJ"/>
                             <constraint firstItem="l1B-K3-hxW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="skS-IG-2aU"/>
                             <constraint firstAttribute="bottom" secondItem="l1B-K3-hxW" secondAttribute="bottom" id="wY9-PZ-gmY"/>
-                            <constraint firstItem="l1B-K3-hxW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zix-Is-UAY"/>
+                            <constraint firstItem="l1B-K3-hxW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="zix-Is-UAY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -63,11 +63,50 @@
                         <outlet property="activityIndicator" destination="ATU-D6-Ctx" id="exs-Fc-YWX"/>
                         <outlet property="collectionView" destination="l1B-K3-hxW" id="2z4-Cc-qtR"/>
                         <outlet property="loginOutBtn" destination="Ykc-Gn-oKK" id="IJ9-m9-eTR"/>
+                        <segue destination="wK0-jN-QVt" kind="show" identifier="toProductsVC" id="noO-18-tpt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="112.3152709359606"/>
+            <point key="canvasLocation" x="1062" y="112"/>
+        </scene>
+        <!--ProductsVC-->
+        <scene sceneID="GvC-na-OyM">
+            <objects>
+                <viewController id="wK0-jN-QVt" customClass="ProductsVC" customModule="Festeller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D3h-en-ivn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-By-qzf">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S1J-Yp-mSj">
+                                <rect key="frame" x="2" y="88" width="371" height="724"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XeQ-ad-Fib" firstAttribute="trailing" secondItem="S1J-Yp-mSj" secondAttribute="trailing" constant="2" id="E9I-WX-08c"/>
+                            <constraint firstItem="S1J-Yp-mSj" firstAttribute="leading" secondItem="XeQ-ad-Fib" secondAttribute="leading" constant="2" id="EqN-ac-fhR"/>
+                            <constraint firstItem="pcw-By-qzf" firstAttribute="trailing" secondItem="XeQ-ad-Fib" secondAttribute="trailing" id="REd-Bm-sTu"/>
+                            <constraint firstItem="S1J-Yp-mSj" firstAttribute="top" secondItem="XeQ-ad-Fib" secondAttribute="top" id="Xbm-Ai-Tq3"/>
+                            <constraint firstAttribute="bottom" secondItem="pcw-By-qzf" secondAttribute="bottom" id="aX0-9h-QDz"/>
+                            <constraint firstItem="pcw-By-qzf" firstAttribute="leading" secondItem="XeQ-ad-Fib" secondAttribute="leading" id="eCO-To-kag"/>
+                            <constraint firstAttribute="bottom" secondItem="S1J-Yp-mSj" secondAttribute="bottom" id="nTR-V3-U9Z"/>
+                            <constraint firstItem="pcw-By-qzf" firstAttribute="top" secondItem="XeQ-ad-Fib" secondAttribute="top" id="q6F-AQ-sKA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XeQ-ad-Fib"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Alr-C7-t7Q"/>
+                    <connections>
+                        <outlet property="productsTableView" destination="S1J-Yp-mSj" id="Psw-aF-r9j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3YZ-bi-Xia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928.8" y="111.57635467980296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O23-hO-L22">
@@ -80,7 +119,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EJc-S7-8wm"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9Xh-KI-ENa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqb-uF-NVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
