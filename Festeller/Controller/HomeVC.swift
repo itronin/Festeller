@@ -41,6 +41,7 @@ class HomeVC: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
+        setCategoriesListener()
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             // We are logged in
        loginOutBtn.title = "Logout"
@@ -51,8 +52,60 @@ class HomeVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         listener.remove()
+        categories.removeAll()
+        collectionView.reloadData()
     }
     
+    func setCategoriesListener() {
+        listener = db.collection("categories").addSnapshotListener({ (snap, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                return
+            }
+            snap?.documentChanges.forEach({ (change) in
+                let data = change.document.data()
+                let category = Category.init(data: data)
+                
+                switch change.type {
+                case .added:
+                    self.onDocumentAdded(change: change, category: category)
+                case .modified:
+                    self.onDocumentModified(change: change, category: category)
+                case .removed:
+                    self.onDocumentRemoved(change: change)
+                }
+            })
+        })
+    }
+    
+    func onDocumentAdded(change: DocumentChange, category: Category) {
+        let newIndex = Int(change.newIndex)
+        categories.insert(category, at: newIndex)
+        collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
+    }
+    
+    func onDocumentModified(change: DocumentChange, category: Category) {
+        if change.newIndex == change.oldIndex{
+            // Item changed but remained at the same postion
+            let index = Int(change.newIndex)
+            categories[index] = category
+            collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+        } else {
+            // Item changed and changed position
+            let oldIndex = Int(change.oldIndex)
+            let newIndex = Int(change.newIndex)
+            categories.remove(at: oldIndex)
+            categories.insert(category, at: newIndex)
+            
+            collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+        }
+    }
+    
+    func onDocumentRemoved(change: DocumentChange) {
+        let oldIndex = Int(change.oldIndex)
+        categories.remove(at: Int(change.oldIndex))
+        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
+    }
     
     fileprivate func presentLoginVC() {
         let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
