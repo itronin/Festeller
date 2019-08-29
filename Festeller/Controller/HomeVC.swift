@@ -26,9 +26,17 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
+        setupCollectionView()
+        setupInitialAnonymousUser()
+    }
+    
+    func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
+    }
+    
+    func setupInitialAnonymousUser(){
         if Auth.auth().currentUser == nil {
             Auth.auth().signInAnonymously { (result, error) in
                 if let error = error {
@@ -38,7 +46,6 @@ class HomeVC: UIViewController {
             }
         }
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         setCategoriesListener()
@@ -57,7 +64,7 @@ class HomeVC: UIViewController {
     }
     
     func setCategoriesListener() {
-        listener = db.collection("categories").addSnapshotListener({ (snap, error) in
+        listener = db.categories.addSnapshotListener({ (snap, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
                 return
@@ -77,6 +84,40 @@ class HomeVC: UIViewController {
             })
         })
     }
+    
+    fileprivate func presentLoginVC() {
+        let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardID.LoginVC )
+        present(controller, animated: true, completion: nil)
+    }
+
+    @IBAction func loginOutPressed(_ sender: Any) {
+        
+        // We are always logged in or either anonymously logged in
+        
+        guard let user = Auth.auth().currentUser else { return }
+        
+        if user.isAnonymous {
+            presentLoginVC()
+        } else {
+            do { try Auth.auth().signOut()
+                Auth.auth().signInAnonymously { (result, error) in
+                    if let error = error {
+                        Auth.auth().handleFireAuthError(error: error, vc: self)
+                        debugPrint(error)
+                    }
+                self.presentLoginVC()
+                }
+            } catch {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint(error)
+            }
+        }
+    }
+}
+
+
+extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func onDocumentAdded(change: DocumentChange, category: Category) {
         let newIndex = Int(change.newIndex)
@@ -107,44 +148,6 @@ class HomeVC: UIViewController {
         collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
     }
     
-    fileprivate func presentLoginVC() {
-        let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: StoryboardID.LoginVC )
-        present(controller, animated: true, completion: nil)
-    }
-
-    
-    @IBAction func loginOutPressed(_ sender: Any) {
-        
-        // We are always logged in or either anonymously logged in
-        
-        guard let user = Auth.auth().currentUser else { return }
-        
-        if user.isAnonymous {
-            presentLoginVC()
-        } else {
-            do { try Auth.auth().signOut()
-                Auth.auth().signInAnonymously { (result, error) in
-                    if let error = error {
-                        Auth.auth().handleFireAuthError(error: error, vc: self)
-                        debugPrint(error)
-                    }
-                self.presentLoginVC()
-                }
-            } catch {
-                Auth.auth().handleFireAuthError(error: error, vc: self)
-                debugPrint(error)
-            }
-        }
-    }
-}
-
-
-
-
-
-
-extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
@@ -177,7 +180,6 @@ extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate, UIColle
             }
         }
     }
-    
 }
 
 // MARK:
