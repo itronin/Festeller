@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailVC" customModule="Festeller" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="mqk-tf-WwJ" id="etF-lR-Icr"/>
+                <outlet property="productDescription" destination="Euo-S6-J5T" id="TK5-ye-5DR"/>
+                <outlet property="productImg" destination="UuS-xB-ORy" id="vTD-4I-PVG"/>
+                <outlet property="productPrice" destination="8LL-BM-TOt" id="JR9-7e-Mc0"/>
+                <outlet property="productTitle" destination="gqS-uZ-hBS" id="S10-JO-cW4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-tf-WwJ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sZA-Go-pig">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="439.5" translatesAutoresizingMaskIntoConstraints="NO" id="eOm-tu-bJz" customClass="RoundedView" customModule="Festeller" customModuleProvider="target">
+                    <rect key="frame" x="20" y="195.5" width="374" height="505"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="k2p-fL-b1X">
+                            <rect key="frame" x="20" y="20" width="334" height="465"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aerial_2" translatesAutoresizingMaskIntoConstraints="NO" id="UuS-xB-ORy">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="250"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="250" id="3cP-rK-yHV"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqS-uZ-hBS">
+                                    <rect key="frame" x="0.0" y="262" width="334" height="27.5"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                    <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LL-BM-TOt">
+                                    <rect key="frame" x="0.0" y="301.5" width="334" height="25"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                    <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euo-S6-J5T">
+                                    <rect key="frame" x="0.0" y="338.5" width="334" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7px-60-HyJ" customClass="RoundedButton" customModule="Festeller" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="373" width="334" height="40"/>
+                                    <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="yMf-Ol-ELZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <state key="normal" title="Add to Cart">
+                                        <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addCartPressed:" destination="-1" eventType="touchUpInside" id="uPY-rN-Lc9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSw-T8-98s" customClass="RoundedButton" customModule="Festeller" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="425" width="334" height="40"/>
+                                    <color key="backgroundColor" red="0.83529411760000005" green="0.3921568627" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="plU-TF-zjm"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <state key="normal" title="Keep Shopping">
+                                        <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="dismissProduct:" destination="-1" eventType="touchUpInside" id="lPJ-WA-RdT"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="k2p-fL-b1X" secondAttribute="bottom" constant="20" id="Qr8-hn-uhD"/>
+                        <constraint firstAttribute="trailing" secondItem="k2p-fL-b1X" secondAttribute="trailing" constant="20" id="Umh-zx-lw4"/>
+                        <constraint firstItem="k2p-fL-b1X" firstAttribute="leading" secondItem="eOm-tu-bJz" secondAttribute="leading" constant="20" id="ZFP-Gj-eez"/>
+                        <constraint firstItem="k2p-fL-b1X" firstAttribute="top" secondItem="eOm-tu-bJz" secondAttribute="top" constant="20" id="ba9-c3-u0s"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mqk-tf-WwJ" secondAttribute="bottom" id="48q-Rt-NNp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mqk-tf-WwJ" secondAttribute="trailing" id="9fx-ef-x0a"/>
+                <constraint firstItem="mqk-tf-WwJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E4D-QI-Me0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eOm-tu-bJz" secondAttribute="trailing" constant="20" id="TyW-6X-oZH"/>
+                <constraint firstItem="eOm-tu-bJz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WEJ-dI-WKg"/>
+                <constraint firstItem="mqk-tf-WwJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zol-33-orR"/>
+                <constraint firstItem="eOm-tu-bJz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pN1-I5-rMH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="118.84057971014494" y="39.508928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="aerial_2" width="1000" height="1778"/>
+    </resources>
+</document>

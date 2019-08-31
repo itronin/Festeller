@@ -28,6 +28,12 @@ class HomeVC: UIViewController {
         db = Firestore.firestore()
         setupCollectionView()
         setupInitialAnonymousUser()
+       // setupNavigationBar()
+    }
+    // commented it out because we managed to do it in storyboard
+    func setupNavigationBar() {
+        guard let font = UIFont(name: "futura", size: 26) else { return }
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: font]
     }
     
     func setupCollectionView() {
