@@ -92,6 +92,7 @@
                         <outlet property="collectionView" destination="FWT-AS-FPf" id="Qad-qh-Sas"/>
                         <outlet property="loginOutBtn" destination="2Ej-TH-ccV" id="23m-IX-XEF"/>
                         <segue destination="Yrt-vL-eRS" kind="show" identifier="ToAddEditCategory" id="WPS-9Z-ErU"/>
+                        <segue destination="EMd-ad-9sY" kind="show" identifier="toProductsVC" id="cWd-7u-2OP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gv-8l-wOZ" sceneMemberID="firstResponder"/>
@@ -181,9 +182,67 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="776.78571428571422"/>
         </scene>
+        <!--Admin ProductsVC-->
+        <scene sceneID="64F-z1-Gfw">
+            <objects>
+                <viewController id="EMd-ad-9sY" customClass="AdminProductsVC" customModule="FestellerAdm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Jr-qq-OPu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="Jjr-K0-H2M">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H6o-xo-xQA">
+                                <rect key="frame" x="2" y="88" width="410" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H6o-xo-xQA" firstAttribute="leading" secondItem="DCW-s6-rHo" secondAttribute="leading" constant="2" id="I0B-nA-zdg"/>
+                            <constraint firstAttribute="bottom" secondItem="H6o-xo-xQA" secondAttribute="bottom" id="Ixg-kn-Saa"/>
+                            <constraint firstItem="Jjr-K0-H2M" firstAttribute="top" secondItem="DCW-s6-rHo" secondAttribute="top" id="Lhe-lz-yBI"/>
+                            <constraint firstItem="Jjr-K0-H2M" firstAttribute="leading" secondItem="DCW-s6-rHo" secondAttribute="leading" id="ST1-Rr-Wg8"/>
+                            <constraint firstItem="DCW-s6-rHo" firstAttribute="trailing" secondItem="H6o-xo-xQA" secondAttribute="trailing" constant="2" id="aXK-b1-I2V"/>
+                            <constraint firstItem="Jjr-K0-H2M" firstAttribute="trailing" secondItem="DCW-s6-rHo" secondAttribute="trailing" id="bCB-N7-QHU"/>
+                            <constraint firstItem="H6o-xo-xQA" firstAttribute="top" secondItem="DCW-s6-rHo" secondAttribute="top" id="fQY-Ga-hNF"/>
+                            <constraint firstAttribute="bottom" secondItem="Jjr-K0-H2M" secondAttribute="bottom" id="r9t-fe-B5M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DCW-s6-rHo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bga-Dy-seV"/>
+                    <connections>
+                        <outlet property="productsTableView" destination="H6o-xo-xQA" id="Rib-zG-v9L"/>
+                        <segue destination="Sah-Xb-OWW" kind="show" identifier="ToAddEditProduct" id="QlB-EO-IX5"/>
+                        <segue destination="Yrt-vL-eRS" kind="show" identifier="ToEditCategory" id="1Lk-kv-tED"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2FV-FE-vAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="1483"/>
+        </scene>
+        <!--Add Edit ProductsVC-->
+        <scene sceneID="VSr-tl-Ec9">
+            <objects>
+                <viewController id="Sah-Xb-OWW" customClass="AddEditProductsVC" customModule="FestellerAdm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iff-KS-ehI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="m6t-Hi-7db"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OcT-gj-TH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858" y="1483"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg_cat3" width="1500" height="1875"/>
         <image name="camera" width="66" height="54"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Lk-kv-tED"/>
+    </inferredMetricsTieBreakers>
 </document>
