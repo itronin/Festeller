@@ -174,6 +174,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="yag-vl-WXg" id="6Sg-Cy-lZ6"/>
+                        <outlet property="addBtn" destination="xBc-Dx-tnK" id="y0l-Rv-Pjd"/>
                         <outlet property="categoryImg" destination="kgJ-mg-XI2" id="6rA-a0-MDM"/>
                         <outlet property="nameTxt" destination="tjl-2e-puB" id="EJt-Sz-lLI"/>
                     </connections>
@@ -229,13 +230,105 @@
                     <view key="view" contentMode="scaleToFill" id="Iff-KS-ehI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noH-YE-7ey">
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bir-by-h9H">
+                                <rect key="frame" x="20" y="150" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Description Below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwG-fZ-dRs">
+                                <rect key="frame" x="115" y="200" width="184" height="23"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b97-xc-0YL">
+                                <rect key="frame" x="20" y="235" width="374" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="QsS-sH-cId"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXV-ft-32n">
+                                <rect key="frame" x="20" y="383" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NPo-ng-ipP">
+                                <rect key="frame" x="188.5" y="637.5" width="37" height="37"/>
+                                <color key="color" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT8-Oc-izt" customClass="RoundedButton" customModule="FestellerAdm" customModuleProvider="target">
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.2666666667" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5oq-U5-fIH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Add Product">
+                                    <color key="titleColor" red="0.95294117649999999" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPressed:" destination="Sah-Xb-OWW" eventType="touchUpInside" id="P9O-0G-olj"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="4hV-gP-eb0" customClass="RoundedImageView" customModule="FestellerAdm" customModuleProvider="target">
+                                <rect key="frame" x="107" y="417.5" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6MU-kc-P3y"/>
+                                    <constraint firstAttribute="height" constant="200" id="q6V-Ex-0bT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4hV-gP-eb0" firstAttribute="top" secondItem="gXV-ft-32n" secondAttribute="bottom" constant="12" id="2L7-ZE-M6m"/>
+                            <constraint firstItem="m6t-Hi-7db" firstAttribute="trailing" secondItem="kT8-Oc-izt" secondAttribute="trailing" constant="20" id="591-U6-7c3"/>
+                            <constraint firstItem="gXV-ft-32n" firstAttribute="leading" secondItem="m6t-Hi-7db" secondAttribute="leading" constant="20" id="7Nh-hy-AFV"/>
+                            <constraint firstItem="NPo-ng-ipP" firstAttribute="top" secondItem="4hV-gP-eb0" secondAttribute="bottom" constant="20" id="Bz4-HJ-3H9"/>
+                            <constraint firstItem="m6t-Hi-7db" firstAttribute="trailing" secondItem="Bir-by-h9H" secondAttribute="trailing" constant="20" id="GRh-iP-Grw"/>
+                            <constraint firstItem="NPo-ng-ipP" firstAttribute="centerX" secondItem="Iff-KS-ehI" secondAttribute="centerX" id="Gcy-jO-rL1"/>
+                            <constraint firstItem="m6t-Hi-7db" firstAttribute="trailing" secondItem="gXV-ft-32n" secondAttribute="trailing" constant="20" id="LiH-nG-9EH"/>
+                            <constraint firstItem="noH-YE-7ey" firstAttribute="leading" secondItem="m6t-Hi-7db" secondAttribute="leading" constant="20" id="MP4-dS-v6W"/>
+                            <constraint firstItem="b97-xc-0YL" firstAttribute="leading" secondItem="m6t-Hi-7db" secondAttribute="leading" constant="20" id="Npc-nC-5bo"/>
+                            <constraint firstItem="hwG-fZ-dRs" firstAttribute="centerX" secondItem="Iff-KS-ehI" secondAttribute="centerX" id="OEE-uW-KJR"/>
+                            <constraint firstItem="m6t-Hi-7db" firstAttribute="trailing" secondItem="noH-YE-7ey" secondAttribute="trailing" constant="20" id="QMJ-tb-xlx"/>
+                            <constraint firstItem="m6t-Hi-7db" firstAttribute="bottom" secondItem="kT8-Oc-izt" secondAttribute="bottom" constant="20" id="Tph-AD-gRa"/>
+                            <constraint firstItem="hwG-fZ-dRs" firstAttribute="top" secondItem="Bir-by-h9H" secondAttribute="bottom" constant="20" id="Z3m-Wt-gNf"/>
+                            <constraint firstItem="b97-xc-0YL" firstAttribute="top" secondItem="hwG-fZ-dRs" secondAttribute="bottom" constant="12" id="ZkU-zX-NDg"/>
+                            <constraint firstItem="noH-YE-7ey" firstAttribute="top" secondItem="m6t-Hi-7db" secondAttribute="top" constant="20" id="aOU-My-mTy"/>
+                            <constraint firstItem="kT8-Oc-izt" firstAttribute="leading" secondItem="m6t-Hi-7db" secondAttribute="leading" constant="20" id="g9p-y4-jRt"/>
+                            <constraint firstItem="m6t-Hi-7db" firstAttribute="trailing" secondItem="b97-xc-0YL" secondAttribute="trailing" constant="20" id="ip0-Kz-3jm"/>
+                            <constraint firstItem="gXV-ft-32n" firstAttribute="top" secondItem="b97-xc-0YL" secondAttribute="bottom" constant="20" id="kFR-na-YQU"/>
+                            <constraint firstItem="Bir-by-h9H" firstAttribute="top" secondItem="noH-YE-7ey" secondAttribute="bottom" constant="12" id="plr-dw-2Li"/>
+                            <constraint firstItem="4hV-gP-eb0" firstAttribute="centerX" secondItem="Iff-KS-ehI" secondAttribute="centerX" id="xiy-nW-VFw"/>
+                            <constraint firstItem="Bir-by-h9H" firstAttribute="leading" secondItem="m6t-Hi-7db" secondAttribute="leading" constant="20" id="yxB-Fa-rtE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m6t-Hi-7db"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="NPo-ng-ipP" id="nZ3-6e-3Yb"/>
+                        <outlet property="addBtn" destination="kT8-Oc-izt" id="hKe-KP-LSl"/>
+                        <outlet property="productDescTxt" destination="b97-xc-0YL" id="t4j-v4-hhH"/>
+                        <outlet property="productImgView" destination="4hV-gP-eb0" id="4WM-pj-gKK"/>
+                        <outlet property="productNameTxt" destination="noH-YE-7ey" id="UjA-1u-Fdx"/>
+                        <outlet property="productPriceTxt" destination="Bir-by-h9H" id="HX8-35-t4D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcT-gj-TH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="1483"/>
+            <point key="canvasLocation" x="1857.9710144927537" y="1482.5892857142856"/>
         </scene>
     </scenes>
     <resources>

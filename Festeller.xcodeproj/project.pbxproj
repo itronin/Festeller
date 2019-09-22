@@ -149,8 +149,8 @@
 				E8224780230884EC009FB3E2 /* AdminHomeVC.swift */,
 				E8ED51372333745000817060 /* AdminProductsVC.swift */,
 				E815DE67231BCDF0001E498F /* AddEditCategoryVC.swift */,
-				E822477E230884EC009FB3E2 /* AppDelegate.swift */,
 				E8ED51392333911200817060 /* AddEditProductsVC.swift */,
+				E822477E230884EC009FB3E2 /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

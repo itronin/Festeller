@@ -34,9 +34,11 @@ class ProductCell: UITableViewCell {
         }
         
         if let url = URL (string: product.imgURL) {
-            productImg.kf.setImage(with: url)
+            let placeholder = UIImage(named: "placeholder")
+            productImg.kf.indicatorType = .activity
+            let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
+            productImg.kf.setImage(with: url, placeholder: placeholder, options: options)
         }
-        
     }
     
     @IBAction func addToCartPressed(_ sender: Any) {
