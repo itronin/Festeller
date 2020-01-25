@@ -31,6 +31,10 @@
 		E822478F23088576009FB3E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E822476D230884B0009FB3E2 /* Assets.xcassets */; };
 		E8224791230887A6009FB3E2 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8224790230887A6009FB3E2 /* LoginStoryboard.storyboard */; };
 		E870A0DC230B1B58003F1365 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870A0DB230B1B58003F1365 /* Constants.swift */; };
+		E87EA05A233F59F000F0701C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FD2562338FFB500F58873 /* UserService.swift */; };
+		E87EA05B233F5A8E00F0701C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FD2532338EDFE00F58873 /* User.swift */; };
+		E87FD2542338EDFE00F58873 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FD2532338EDFE00F58873 /* User.swift */; };
+		E87FD2572338FFB500F58873 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FD2562338FFB500F58873 /* UserService.swift */; };
 		E8968AFB231BC68D002977B7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8224768230884AF009FB3E2 /* HomeVC.swift */; };
 		E8973ED3230FAAAE001D8C6F /* Firebase_Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8973ED2230FAAAE001D8C6F /* Firebase_Utils.swift */; };
 		E8973ED4230FABBA001D8C6F /* Firebase_Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8973ED2230FAAAE001D8C6F /* Firebase_Utils.swift */; };
@@ -86,6 +90,8 @@
 		E822478A230884ED009FB3E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8224790230887A6009FB3E2 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		E870A0DB230B1B58003F1365 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E87FD2532338EDFE00F58873 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E87FD2562338FFB500F58873 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E8973ED2230FAAAE001D8C6F /* Firebase_Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_Utils.swift; sourceTree = "<group>"; };
 		E8973ED5230FB3A4001D8C6F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E8D14CA3231A640200825E35 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 			children = (
 				E8973ED5230FB3A4001D8C6F /* Category.swift */,
 				E8F3B93923111F650000F3C2 /* Product.swift */,
+				E87FD2532338EDFE00F58873 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 		E8224765230884AF009FB3E2 /* Festeller */ = {
 			isa = PBXGroup;
 			children = (
+				E87FD2552338FF8F00F58873 /* Services */,
 				E821376E230EA96E001E4E5C /* XIBs */,
 				E81E7BE42308B46100D7EE0C /* View */,
 				E81E7BE32308B45D00D7EE0C /* Controller */,
@@ -260,6 +268,14 @@
 				E822476D230884B0009FB3E2 /* Assets.xcassets */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		E87FD2552338FF8F00F58873 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E87FD2562338FFB500F58873 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E8E3DC9D2309DA7B001463AF /* Utilities */ = {
@@ -492,7 +508,9 @@
 				E8D14CA5231A640200825E35 /* ProductDetailVC.swift in Sources */,
 				E8973ED6230FB3A4001D8C6F /* Category.swift in Sources */,
 				E8224769230884AF009FB3E2 /* HomeVC.swift in Sources */,
+				E87FD2542338EDFE00F58873 /* User.swift in Sources */,
 				E81E7BEC2308B59C00D7EE0C /* RegisterVC.swift in Sources */,
+				E87FD2572338FFB500F58873 /* UserService.swift in Sources */,
 				E8224767230884AF009FB3E2 /* AppDelegate.swift in Sources */,
 				E8F3B93E231120B10000F3C2 /* ProductCell.swift in Sources */,
 				E8FF40E8230C28E600166F87 /* RoundedViews.swift in Sources */,
@@ -516,6 +534,7 @@
 				E8973ED7230FB3A4001D8C6F /* Category.swift in Sources */,
 				E8224781230884EC009FB3E2 /* AdminHomeVC.swift in Sources */,
 				E8E3DCA02309DA9D001463AF /* Extensions.swift in Sources */,
+				E87EA05A233F59F000F0701C /* UserService.swift in Sources */,
 				E8F3B93823111E450000F3C2 /* ProductsVC.swift in Sources */,
 				E8ED51382333745000817060 /* AdminProductsVC.swift in Sources */,
 				E8F3B93F231120B10000F3C2 /* ProductCell.swift in Sources */,
@@ -523,6 +542,7 @@
 				E822477F230884EC009FB3E2 /* AppDelegate.swift in Sources */,
 				E8968AFB231BC68D002977B7 /* HomeVC.swift in Sources */,
 				E8F99AFC23105953006952C8 /* CategoryCell.swift in Sources */,
+				E87EA05B233F5A8E00F0701C /* User.swift in Sources */,
 				E815DE65231BCAEE001E498F /* ProductDetailVC.swift in Sources */,
 				E8ED513A2333911200817060 /* AddEditProductsVC.swift in Sources */,
 				E815DE64231BCAA9001E498F /* Constants.swift in Sources */,

@@ -58,6 +58,9 @@ class HomeVC: UIViewController {
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             // We are logged in
        loginOutBtn.title = "Logout"
+            if UserService.userListener == nil {
+                UserService.getCurrentUser()
+            }
         } else {
             loginOutBtn.title = "Login"
         }
@@ -97,6 +100,10 @@ class HomeVC: UIViewController {
         present(controller, animated: true, completion: nil)
     }
 
+    @IBAction func favoritesPressed(_ sender: Any) {
+        performSegue(withIdentifier: Segues.ToFavorites, sender: self)
+    }
+    
     @IBAction func loginOutPressed(_ sender: Any) {
         
         // We are always logged in or either anonymously logged in
@@ -107,6 +114,7 @@ class HomeVC: UIViewController {
             presentLoginVC()
         } else {
             do { try Auth.auth().signOut()
+                UserService.logoutUser()
                 Auth.auth().signInAnonymously { (result, error) in
                     if let error = error {
                         Auth.auth().handleFireAuthError(error: error, vc: self)
@@ -154,7 +162,6 @@ extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate, UIColle
         collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
@@ -183,6 +190,11 @@ extension HomeVC : UICollectionViewDataSource, UICollectionViewDelegate, UIColle
         if segue.identifier == Segues.ToProducts {
             if let destination = segue.destination as? ProductsVC {
                 destination.category = selectedCategory
+            }
+        } else if segue.identifier == Segues.ToFavorites {
+            if let destination = segue.destination as? ProductsVC {
+                destination.category = selectedCategory
+                destination.showFavorites = true
             }
         }
     }

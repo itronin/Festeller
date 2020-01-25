@@ -9,6 +9,10 @@
 import UIKit
 import Kingfisher
 
+protocol ProductCellDelegate : class {
+    func productFavorited(product : Product)
+}
+
 class ProductCell: UITableViewCell {
 
     // Outlets
@@ -18,13 +22,17 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    weak var delegate : ProductCellDelegate?
+    private var product: Product!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configureCell (product: Product) {
-        
+    func configureCell (product: Product, delegate: ProductCellDelegate) {
+        self.product = product
+        self.delegate = delegate 
         productTitle.text = product.name
         
         let formatter = NumberFormatter()
@@ -34,17 +42,25 @@ class ProductCell: UITableViewCell {
         }
         
         if let url = URL (string: product.imgURL) {
-            let placeholder = UIImage(named: "placeholder")
+            let placeholder = UIImage(named: AppImages.Placeholder)
             productImg.kf.indicatorType = .activity
             let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
             productImg.kf.setImage(with: url, placeholder: placeholder, options: options)
         }
+        
+        if UserService.favorites.contains(product) {
+            favoriteButton.setImage(UIImage(named: AppImages.FilledStar), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: AppImages.EmptyStar), for: .normal)
+        }
+        
     }
     
     @IBAction func addToCartPressed(_ sender: Any) {
     }
     
     @IBAction func favoritePressed(_ sender: Any) {
+        delegate?.productFavorited(product: product)
     }
     
 }

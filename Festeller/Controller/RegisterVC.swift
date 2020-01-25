@@ -68,10 +68,24 @@ class RegisterVC: UIViewController {
         
         activityIndicator.startAnimating()
         
+//        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+//            if let error = error {
+//                debugPrint(error)
+//                Auth.auth().handleFireAuthError(error: error, vc: self)
+//                return
+//            }
+//
+//            guard let firUser = result?.user else { return }
+//            let fesUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+//
+//            // Upload to Firestore
+//            self.createFirestoreUser(user: fesUser)
+//        }
+        
         guard let authUser = Auth.auth().currentUser else {
             return
         }
-        
+
         let credential = EmailAuthProvider.credential(withEmail: email, password: password)
         authUser.link(with: credential) { (result, error) in
             if let error = error {
@@ -79,8 +93,31 @@ class RegisterVC: UIViewController {
                 Auth.auth().handleFireAuthError(error: error, vc: self)
                 return
             }
+            
+            guard let firUser = result?.user else { return }
+            let fesUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+            // Upload to Firestore
+            self.createFirestoreUser(user: fesUser)
+        }
+    }
+    
+    func createFirestoreUser(user: User) {
+        
+        // Step 1: Create document reference
+        let newUserRef = Firestore.firestore().collection("users").document(user.id)
+        
+        // Step 2: Create model data
+        let data = User.modelToData(user: user)
+        
+        // Step 3: Upload to Firestore.
+        newUserRef.setData(data) { (error) in
+            if let error = error {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint("Unable to upload new user document")
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
             self.activityIndicator.stopAnimating()
-            self.dismiss(animated: true, completion: nil)
         }
     }
 }
